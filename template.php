@@ -21,7 +21,7 @@ $sidebarentries = array(0, # We skip this entry anyway...
 	1,
 	array("name"=>"Report a Bug",        "page"=>"https://github.com/FreeGLUTProject/freeglut/issues"),
 	array("name"=>"Submit a patch",      "page"=>"https://github.com/FreeGLUTProject/freeglut/pulls"),
-	array("name"=>"Project Interface",   "page"=>"https://github.com/FreeGLUTProject/freeglut")
+	array("name"=>"Github project",   "page"=>"https://github.com/FreeGLUTProject/freeglut")
 );
 
 function generateHeader($self) 
