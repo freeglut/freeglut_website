@@ -16,11 +16,10 @@ This is OpenGL at its finest.
 <p>freeglut started out as a GLUT clone, but now it's something much
 better than that. It's a GLUT replacement. Here are the features you
 have wanted -- and if you have ideas for more, share them (see below),
-or fork our <a href="https://github.com/dcnieho/FreeGLUT">github
+or fork our <a href="https://github.com/FreeGLUTProject/freeglut">github
 repository</a> and implement them! freeglut is under continuous
-development. Currently, work on 3.0 is in full swing.  See <a
-href=progress.php>here</a> for the list of work that is still to be
-done.</p> 
+development. See <a href=progress.php>here</a> for the list of work that is
+still to be done.</p> 
 
 <div class="textheader">Everyone can help</div>
 <p>
@@ -30,20 +29,17 @@ Contributions can be nearly anything.  The point is involvement!</p>
 
 <p>Examples:
 <ul>
-    <li>Attack one of the <a href="progress.php">points on our todo
-    list</a></li>
+	<li>Attack one of the <a href="progress.php">points on our todo list</a></li>
 	<li>Use freeglut in your projects!</li>
 	<li>Tell us what you like.</li>
 	<li>Tell us what you'd change.</li>
-	<li><a href="http://sourceforge.net/p/freeglut/bugs/">Report bugs.</a></li>
+	<li><a href="https://github.com/FreeGLUTProject/freeglut/issues">Report bugs.</a></li>
 	<li>Write documentation.</li>
 	<li>Spread the word about the project.</li>
 	<li><a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">Join</a> our development mailing list.</li>
-    <li>If you changed or added a feature, send us <a
-    href="http://sourceforge.net/p/freeglut/feature-requests/">a
-    patch on sourceforge.net</a>, or <a
-    href="https://github.com/dcnieho/FreeGLUT">a pull request on
-    github</a> -- others might benefit from your work!</li>
+	<li>If you changed or added a feature, create
+		<a href="https://github.com/FreeGLUTProject/freeglut/pull">a pull request on github</a>,
+		or send us a patch on the mailing list -- others might benefit from your work!</li>
 </ul></p>
 
 <p>
@@ -51,26 +47,19 @@ But simply, become involved!
 The project is not just software, it's the people that contribute, too.
 </p>
 
-<div class="textheader">freeglut 3.0</div>
+<div class="textheader">future freeglut</div>
 <p>
 <a href=progress.php>Click here</a> for an overview of the major work,
-its status and planned milestones for freeglut 3.0 and beyond. Help on
+its status and planned milestones for future versions of freeglut. Help on
 any of these plans, as well as suggestions and/or patches for anything
 else are very welcome!
 </p>
 
-<div class="textheader">Go to SourceForge and...</div>
-
-<ul>
-	<li><a href="http://sourceforge.net/p/freeglut/feature-requests/">Review current feature requests</a></li>
-	<li><a href="http://sourceforge.net/p/freeglut/bugs/">Review current bug reports</a></li>
-</ul>
-
-<div class="textheader"><a name="svn"></a>Anonymous SVN Access</div>
-<p>To check out the most up to date development copy of freeglut, issue the following commands at your command line. See also <a href="http://sourceforge.net/p/freeglut/code/HEAD/tree/">SourceForge's Anonymous SVN Instructions</a>.</p>
+<div class="textheader"><a name="svn"></a>Getting the latest source code</div>
+<p>To get the most up to date development copy of freeglut, use the following command:</p>
 
 <pre>
-svn co http://svn.code.sf.net/p/freeglut/code/trunk/freeglut/freeglut freeglut
+git clone https://github.com/FreeGLUTProject/freeglut
 </pre>
 
 <?php generateFooter(); ?>
