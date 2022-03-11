@@ -9,6 +9,77 @@ generateHeader($_SERVER['PHP_SELF']);
 ?>
 
 <div class="news-item">
+<div class="news-header">Moved repository to github [9 March 2022]</div>
+<p>It's finally time to leave subversion behind and convert the freeglut source
+code repository to git. At the same time our
+<a href="https://github.com/FreeGLUTProject/freeglut/">official source code repository is now hosted on github</a>.</p>
+
+<p>Release archives will be available through both the github releases page, and
+also mirrored under the old sourceforge downloads.</p>
+
+<p>The website, and mailing lists will continue to be hosted on sourceforge, but
+new bug reports and feature requests should be submitted through the
+<a href="https://github.com/FreeGLUTProject/freeglut/issues">github issues system</a>.
+We also now accept <a href="https://github.com/FreeGLUTProject/freeglut/pulls">pull requests</a>
+as well as regular patches sent to the
+<a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">freeglut-developer mailing list</a>
+as always.</p>
+</div>
+
+<div class="news-item">
+<div class="news-header">freeglut 3.2.2 Released [6 February 2022]</div>
+<ul>
+	<li>Fix build with gcc &gt;= 10 which no longer supports COMMON section symbols by default.</li>
+	<li>Fix netbsd/aarch64 build.</li>
+	<li>Fix android build (default to <tt>FREEGLUT_GLES</tt>).</li>
+	<li>Fix crash when calling primitive drawing functions without creating a
+		window first.</li>
+</ul>
+</div>
+
+<div class="news-item">
+<div class="news-header">freeglut 3.2.1 Released [29 September 2019]</div>
+<p>Minor bugfix release</p>
+<ul>
+	<li>Fixed failure to install glut.h when the "replace glut" build option is enabled.</li>
+	<li>Take into account <tt>CMAKE_INSTALL_LIBDIR</tt> in the installed cmake module.</li>
+	<li>Fixed broken menu drawing when the user requests a core profile context.</li>
+</ul>
+</div>
+
+<div class="news-item">
+<div class="news-header">freeglut 3.2.0 Released [16 September 2019]</div>
+<ul>
+	<li>Added new callback registration functions and corresponding callback types
+		in the extended API, which take an extra user pointer, and pass it through
+		to the callbacks (ucall API).</li>
+	<li>Initial wayland support.</li>
+	<li>Fixed mousewheel callbacks on X11.</li>
+	<li>Fallback to non-sRGB context, instead of crashing, if the user requested
+		sRGB but failed to get one.</li>
+	<li>Added <tt>GLUT_WINDOW_SRGB</tt> query to check if the context supports sRGB or the
+		fallback was triggered.</li>
+	<li>Added missing spaceball support for windows.</li>
+	<li>Added init error handler demo.</li>
+	<li>Added cmake package.</li>
+	<li>Added <tt>GLUT_ALLOW_NEGATIVE_WINDOW_POSITION</tt> option.</li>
+	<li>Added spaceball button definitions in the extended API header.</li>
+	<li>Added checking for the XInput dependency in cmake.</li>
+	<li>Fixed netbsd build (joystick code).</li>
+	<li>Fixed android build with clang.</li>
+	<li>Fixed <tt>GLUT_STEREO</tt> on nvidia windows drivers, which don't play well
+		with fullscreen windows with frames.</li>
+	<li>And a number of other bugfixes ...</li>
+</ul>
+</div>
+
+<div class="news-item">
+<div class="news-header">freeglut 3.0.0 Released [5 April 2013]</div>
+<p>Switched the freeglut build system for autotools plus a number of arbitrary
+project files, to cmake. See <tt>README.cmake</tt> for build instructions.</p>
+</div>
+
+<div class="news-item">
 <div class="news-header">freeglut 2.8.1 Released [5 April 2013]</div>
 <p>A new bugfix release of "freeglut" is now available. Here is a
 incomplete list of fixes and enhancements:</p>

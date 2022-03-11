@@ -66,78 +66,133 @@ and BlackBerry 10 ports. Furthermore, ports to Cocoa on OSX, and maybe even
 Wayland are planned, along with some enhancements to the API and implementation.</p>
 
 <p>See <a href="progress.php">here</a> for an overview of the major points
-on our todo list. You can easily help out by forking the unofficial clone
-of our <a
-href="https://sourceforge.net/p/freeglut/code/HEAD/tree/">sourceforge.net
-SVN repository</a> on <a
-href="https://github.com/dcnieho/FreeGLUT">github</a>. For more
-information about helping out, see the <a href="help.php">Help Out
-page</a> and <a
-href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">join</a>
-the <a
-href="mailto:freeglut-developer@lists.sourceforge.net">freeglut-developer</a>
+on our todo list. For more information about helping out, see the
+<a href="help.php">Help Out page</a> and
+<a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">join</a>
+the <a href="mailto:freeglut-developer@lists.sourceforge.net">freeglut-developer</a>
 mailing list.</p>
+
+<p>The <a href="https://github.com/FreeGLUTProject/freeglut">freeglut source code repository</a>
+is now hosted on github. So you can also send us pull requests or report bugs
+through the <em>github issues</em> system if you prefer. However lengthy discussion
+on potential design issues for large contributions are best suited to the mailing list.</p>
 
 <div class="textheader"><a name="download"></a>Downloads...</div>
 <p>Below are file links for the freeglut project. README files are included. Have fun!</p>
 
 <div class="indent">
-	<div class="textheader">Testing Releases</div>
-    <p>Feel free to test by downloading a <a
-    href="https://sourceforge.net/p/freeglut/code/HEAD/tarball?path=/trunk/freeglut/freeglut">tarball
-    of current trunk</a>, or <a href="help.php#svn">grabbing a copy from
-    svn</a>, and give us feedback on how it worked for you. All this
-    will eventually become a freeglut 3.4 release.</p>
-	<p>There are no presently active testing releases.</p>
-</div>
-
-
-<div class="indent">
 	<div class="textheader">Stable Releases</div>
 	<p>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.2.tar.gz?download">freeglut 3.2.2</a> [<i>Released: 6 February 2022</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz?download">freeglut 3.2.1</a> [<i>Released: 29 September 2019</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.0.tar.gz?download">freeglut 3.2.0</a> [<i>Released: 16 September 2019</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz?download">freeglut 3.0.0</a> [<i>Released: 7 March 2015</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.8.1.tar.gz?download">freeglut 2.8.1</a> [<i>Released: 5 April 2013</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.8.0.tar.gz?download">freeglut 2.8.0</a> [<i>Released: 2 January 2012</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.6.0.tar.gz?download">freeglut 2.6.0</a> [<i>Released: 27 November 2009</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.4.0.tar.gz?download">freeglut 2.4.0</a> [<i>Released: 9 June 2005</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.2.0.tar.gz?download">freeglut 2.2.0</a> [<i>Released: 12 December 2003</i>]<br/>
-	<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.0.1.tar.gz?download">freeglut 2.0.1</a> [<i>Released: 23 October 2003</i>]
+		Stable releases are available on our
+		<a href="https://github.com/FreeGLUTProject/freeglut/releases">releases page on github</a>,
+		where you can find more information about each release. All releases are
+		also mirrored on the
+		<a href="https://sourceforge.net/projects/freeglut/files/">old downloads page on sourceforge</a>.
 	</p>
 
-	<div class="textheader">Prepackaged Releases</div>
+	<ul>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v3.2.2/freeglut-3.2.2.tar.gz">freeglut 3.2.2</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.2.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 6 February 2022</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v3.2.1/freeglut-3.2.1.tar.gz">freeglut 3.2.1</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.1.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 29 September 2019</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v3.2.0/freeglut-3.2.0.tar.gz">freeglut 3.2.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.2.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 16 September 2019</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v3.0.0/freeglut-3.0.0.tar.gz">freeglut 3.0.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.0.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 7 March 2015</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.8.1/freeglut-2.8.1.tar.gz">freeglut 2.8.1</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.8.1.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 5 April 2013</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.8.0/freeglut-2.8.0.tar.gz">freeglut 2.8.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.8.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 2 January 2012</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.6.0/freeglut-2.6.0.tar.gz">freeglut 2.6.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.6.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 27 November 2009</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.4.0/freeglut-2.4.0.tar.gz">freeglut 2.4.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.4.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 9 June 2005</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.2.0/freeglut-2.2.0.tar.gz">freeglut 2.2.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.2.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 12 December 2003</i>]
+		</li>
+		<li>
+			<a href="https://github.com/FreeGLUTProject/freeglut/releases/download/v2.0.1/freeglut-2.0.1.tar.gz">freeglut 2.0.1</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-2.0.1.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 23 October 2003</i>]
+		</li>
+	</ul>
 
-	<p>The freeglut project does not support packaged versions of freeglut
-excepting, of course, the tarballs distributed here. However, various members of
-the community have put time and effort into providing source or binary rollups,
-and we thank them for their efforts. Here's a list which is likely
-incomplete:</p>
+	<div class="textheader">Pre-Compiled Packages</div>
 
-<!--
-	<p>
-		Andy Piper's <a href="http://jumpgate.homelinux.net/random/freeglut-fedora/">RedHat Fedora RPMs</a><br/>
-		Gentoo <a href="http://bugs.gentoo.org/show_bug.cgi?id=36783">freeglut-2.2.0.ebuild</a><br/>
-		Nigel Stewart's <a href="http://www.nigels.com/glt/devpak/">DevPak</a> for <a href="http://www.bloodshed.net/dev/devcpp.html">Dev C++</a>
-	</p>
--->
-	<p>
-		<a href="http://www.transmissionzero.co.uk/software/freeglut-devel/">Martin Payne's Windows binaries (MSVC and MinGW)</a><br/>
-		<a href="http://tisch.sf.net/freeglut-2.6.0-mpx-latest.patch">Florian Echtler's MPX Patch</a>
-	</p>
+	<p>The freeglut project does not distribute pre-compiled or otherwise system-specific packages for freeglut.
+	We only release and support freeglut in source code form as listed above.
+	However, most free software package distributions
+	include some version of freeglut, which might provide a more convenient way to
+	obtain and use freeglut. Here's a necessarily woefully incomplete list of such
+	packaging efforts for your system:</p>
 
-	<p>If you have problems with these packages, please contact their maintainers - we of the freeglut team probably can't help.</p>
+	<ul>
+		<li>GNU/Linux distributions such as Debian, Arch, Ubuntu, RedHat and so on,
+			all distribute some version of freeglut. See your system documentation
+			on how to install it. On Debian and its derivatives it's: <tt>apt install freeglut3-dev</tt>.</li>
+
+		<li>FreeBSD includes freeglut in its <a href="https://www.freshports.org/graphics/freeglut">ports system</a>.
+			<a href="http://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/graphics/freeglut/index.html">as does NetBSD</a>.</li>
+
+		<li>Windows users using the msys2/mingw system can install freeglut with
+			the command: <tt>pacman -S mingw-w64-x86_64-freeglut</tt> for the 64bit version,
+			or can use <tt>pacman -sS freeglut</tt> too see all available variants.</li>
+
+		<li>MacOS&nbsp;X users can use the <a href="https://brew.sh/">homebrew</a>
+			package manager to install freeglut with the command: <tt>brew install freeglut</tt>.</li>
+
+		<li>Another option for windows users is
+			<a href="http://www.transmissionzero.co.uk/software/freeglut-devel/">Martin Payne's Windows binaries (MSVC and MinGW)</a></li>
+	</ul>
+
+	<p>If you have problems with these packages, please contact their maintainers,
+		we probably can't help.</p>
+
+	<p>Also if you can't find a suitable package for your system, don't panic;
+		building freeglut from source is very easy, just follow the instructions in
+		<tt>README.cmake</tt> in the freeglut source.</p>
 	
-	<div class="textheader">Development Releases</div>
-	<p>
-		<a href="https://sourceforge.net/p/freeglut/code/HEAD/tarball?path=/trunk/freeglut/freeglut">SVN trunk tarball</a><br/>
-		<a href="help.php#svn">Anonymous SVN Instructions</a>
-	</p>
+	<div class="textheader">Current Source Code</div>
+	<p>You can always download the absolute latest available freeglut source code
+	from our <a href="https://github.com/FreeGLUTProject/freeglut">github repository</a>.
+	Freeglut is a mature project, and the github HEAD is usually quite stable.</p>
+
+	<p>To grab a copy of the repository using git, use the command:
+		<tt>git clone https://github.com/FreeGLUTProject/freeglut</tt>.</p>
+
+	<p>Alternatively you can download a
+		<a href="https://github.com/FreeGLUTProject/freeglut/archive/refs/heads/master.zip">snapshot of the latest revision</a>.</p>
+
 </div>
 
 <div class="textheader">Questions?</div>
-<p>Don't be afraid to ask for help. We don't bite. Much.</p>
+<p>Don't be afraid to ask for help.</p>
 <p>Send freeglut related questions to the appropriate freeglut mailing list:</p>
 
 <ul>
