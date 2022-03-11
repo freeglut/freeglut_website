@@ -19,9 +19,9 @@ $sidebarentries = array(0, # We skip this entry anyway...
 	array("name"=>"API",          "page"=>"/docs/api.php"),
 	array("name"=>"OpenGL Wikibook",     "page"=>"http://en.wikibooks.org/wiki/OpenGL_Programming"),
 	1,
-	array("name"=>"Report a Bug",        "page"=>"http://sourceforge.net/p/freeglut/bugs/"),
-	array("name"=>"Request a Feature",   "page"=>"http://sourceforge.net/p/freeglut/feature-requests/"),
-	array("name"=>"Project Interface",   "page"=>"http://sourceforge.net/projects/freeglut/")
+	array("name"=>"Report a Bug",        "page"=>"https://github.com/FreeGLUTProject/freeglut/issues"),
+	array("name"=>"Submit a patch",      "page"=>"https://github.com/FreeGLUTProject/freeglut/pulls"),
+	array("name"=>"Project Interface",   "page"=>"https://github.com/FreeGLUTProject/freeglut")
 );
 
 function generateHeader($self) 
@@ -79,7 +79,7 @@ function generateSideBar($current_page)
 	
 	# This allows a user to view our PHP source... it's in SVN anyway, and why not spread the love of
 	# slick web page design? ;)
-	$svn_location = "http://freeglut.svn.sourceforge.net/viewvc/freeglut/trunk/freeglut/web-src$current_page?view=markup";
+	$svn_location = "https://github.com/FreeGLUTProject/freeglut_website/blob/master$current_page";
 	
 	# Print the SourceForge logo button and the "View source" link	
 ?>
