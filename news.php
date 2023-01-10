@@ -9,6 +9,39 @@ generateHeader($_SERVER['PHP_SELF']);
 ?>
 
 <div class="news-item">
+<div class="news-header">freeglut 3.4.0 Released [7 October 2022]</div>
+<ul>
+    <li>Add GLUT_ACTIVE_SUPER modifier, and corresponding GLUT_KEY_SUPER_L and GLUT_KEY_SUPER_R special keys. These map to Windows/Command keys.</li>
+    <li>Fix RGB mode (GLUT_RGBA) colors on 8bpp displays on windows (construct default RGB332 palette).</li>
+    <li>Fix indexed color context creation on X11 and windows (GLUT_INDEX).</li>
+    <li>Add missing colormap management functions for X11 and windows (glutSetColor, glutGetColor).</li>
+    <li>Fix crash when calling glutTimerFuncUcall.</li>
+    <li>Fix FreeBSD build by essentially disabling the joystick code for newer FreeBSD versions. It will eventually need to be replaced/fixed.</li>
+    <li>Add fallbacks for the old GLX (&lt;1.3) context creation API (glXChooseVisual/glXCreateContext), makes us compatible with IRIX 5.x and other old UNIX systems.</li>
+    <li>Add fallbacks for OpenGL 1.0 (no vertex arrays/client state).</li>
+    <li>Use nanosleep instead of usleep on UNIX, which is more widely supported on old UNIX systems.</li>
+    <li>Fix build on X11 if GL_SAMPLES is not defined.</li>
+    <li>Fix overly strict context version checking on Android leading to context creation failure in some cases.</li>
+    <li>Fix GLUT_CURSOR_INFO on windows, should be IDC_HAND, not IDC_HELP.</li>
+    <li>Fix mismatched font declarations on X11.</li>
+    <li>Add alternative simple ways to build freeglut with native tools only, without having to use cmake.</li>
+    <li>Fix build on windows with cmake 3.0.0. Explicitly link with gdi32.</li>
+    <li>Fix build on MSVC 2005.</li>
+    <li>Fix build on MacOS X. Link with all the necessary X libraries.</li>
+    <li>Fix build on SGI IRIX.</li>
+    <li>Fix build on Android (mismatched function prototypes and missing glutCreateMenuUcall).</li>
+    <li>Add support for the ninja multi-config generator.</li>
+    <li>Removed spurious dependency on a C++ compiler. One of the demos was being compiled as C++ for no reason.</li>
+    <li>Silence unnecessary warnings when VBOs or GLSL are not available.</li>
+    <li>New demo programs: 3dview, keyboard, joystick.</li>
+    <li>Documentation: added MacOS X build instructions.</li>
+    <li>Made it possible to eventually support building freeglut as a single compilation unit, by avoiding name conflicts on static variables.</li>
+    <li>Other minor fixes.</li>
+</ul>
+</div>
+
+
+<div class="news-item">
 <div class="news-header">Moved repository to github [9 March 2022]</div>
 <p>It's finally time to leave subversion behind and convert the freeglut source
 code repository to git. At the same time our
