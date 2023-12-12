@@ -45,15 +45,15 @@ generateHeader($_SERVER['PHP_SELF']);
 <div class="news-header">Moved repository to github [9 March 2022]</div>
 <p>It's finally time to leave subversion behind and convert the freeglut source
 code repository to git. At the same time our
-<a href="https://github.com/FreeGLUTProject/freeglut/">official source code repository is now hosted on github</a>.</p>
+<a href="https://github.com/freeglut/freeglut/">official source code repository is now hosted on github</a>.</p>
 
 <p>Release archives will be available through both the github releases page, and
 also mirrored under the old sourceforge downloads.</p>
 
 <p>The website, and mailing lists will continue to be hosted on sourceforge, but
 new bug reports and feature requests should be submitted through the
-<a href="https://github.com/FreeGLUTProject/freeglut/issues">github issues system</a>.
-We also now accept <a href="https://github.com/FreeGLUTProject/freeglut/pulls">pull requests</a>
+<a href="https://github.com/freeglut/freeglut/issues">github issues system</a>.
+We also now accept <a href="https://github.com/freeglut/freeglut/pulls">pull requests</a>
 as well as regular patches sent to the
 <a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">freeglut-developer mailing list</a>
 as always.</p>

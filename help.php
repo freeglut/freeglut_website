@@ -16,7 +16,7 @@ This is OpenGL at its finest.
 <p>freeglut started out as a GLUT clone, but now it's something much
 better than that. It's a GLUT replacement. Here are the features you
 have wanted -- and if you have ideas for more, share them (see below),
-or fork our <a href="https://github.com/FreeGLUTProject/freeglut">github
+or fork our <a href="https://github.com/freeglut/freeglut">github
 repository</a> and implement them! freeglut is under continuous
 development. See <a href=progress.php>here</a> for the list of work that is
 still to be done.</p> 
@@ -33,12 +33,12 @@ Contributions can be nearly anything.  The point is involvement!</p>
 	<li>Use freeglut in your projects!</li>
 	<li>Tell us what you like.</li>
 	<li>Tell us what you'd change.</li>
-	<li><a href="https://github.com/FreeGLUTProject/freeglut/issues">Report bugs.</a></li>
+	<li><a href="https://github.com/freeglut/freeglut/issues">Report bugs.</a></li>
 	<li>Write documentation.</li>
 	<li>Spread the word about the project.</li>
 	<li><a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">Join</a> our development mailing list.</li>
 	<li>If you changed or added a feature, create
-		<a href="https://github.com/FreeGLUTProject/freeglut/pull">a pull request on github</a>,
+		<a href="https://github.com/freeglut/freeglut/pull">a pull request on github</a>,
 		or send us a patch on the mailing list -- others might benefit from your work!</li>
 </ul></p>
 
@@ -59,7 +59,7 @@ else are very welcome!
 <p>To get the most up to date development copy of freeglut, use the following command:</p>
 
 <pre>
-git clone https://github.com/FreeGLUTProject/freeglut
+git clone https://github.com/freeglut/freeglut
 </pre>
 
 <?php generateFooter(); ?>
