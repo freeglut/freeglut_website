@@ -92,6 +92,11 @@ on potential design issues for large contributions are best suited to the mailin
 
 	<ul>
 		<li>
+			<a href="https://github.com/freeglut/freeglut/releases/download/v3.6.0/freeglut-3.6.0.tar.gz">freeglut 3.6.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.6.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 12 June 2024</i>]
+		</li>
+		<li>
 			<a href="https://github.com/freeglut/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz">freeglut 3.4.0</a>
 			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.4.0.tar.gz?download">sourceforge mirror</a>)
 			[<i>Released: 7 October 2022</i>]
