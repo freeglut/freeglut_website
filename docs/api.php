@@ -303,29 +303,66 @@ and their compatibility with GLUT, are made explicit.
 There is considerable confusion about the "right thing to do" concerning
 window size and position. GLUT itself is not consistent between
 Windows and UNIX/X11; since platform independence is a virtue for
-<i>freeglut</i>, we decided to break with GLUT's behaviour. <br>
-Under UNIX/X11, it is apparently not possible to get the window border
-sizes in order to subtract them off the window's initial position until
-some time after the window has been created.  Therefore we decided on
-the following behavior, both under Windows and under UNIX/X11:
-<ul><li>When you create a window with position (x,y) and size (w,h), the
-upper left hand corner of the outside of the window (the non-client
-area) is at (x,y) and the size of the drawable (client) area is (w,h).
-The coordinates taken by <tt>glutInitPosition</tt> and
-<tt>glutPositionWindow</tt>, as well as the coordinates provided by
-<i>freeglut</i> when it calls the <tt>glutPositionFunc</tt> callback,
-specify the top-left of the non-client area of the window. By default
-only positive-signed coordinates are supported. If GLUT_ALLOW_NEGATIVE_WINDOW_POSITION
-is enabled, then negative coordinates are supported. An exception
-for <tt>glutPositionWindow</tt> exists as it's always supported negative
-window coordinates.</li>
-<li>When you query the size and position of the window using
-<tt>glutGet</tt>, <i>freeglut</i> will return the size of the drawable
-area--the (w,h) that you specified when you created the window--and the
-coordinates of the upper left hand corner of the drawable (client)
-area--which is <u>NOT</u> the (x,y) position of the window you specified
-when you created it.</ul>
+<i>freeglut</i>, we decided to break with GLUT's behaviour.
 </p>
+
+<p>
+<b>Important:</b> Window positioning behavior is highly dependent on the
+window manager (WM) on X11/UNIX systems. The window system has significant
+discretion in how it handles window placement requests and is not obligated
+to honor them precisely. Different window managers may interpret positioning
+requests differently, making exact window positioning inherently ambiguous
+on these platforms.
+</p>
+
+<p>
+Under UNIX/X11, it is not possible to get the window border
+sizes in order to subtract them off the window's initial position until
+some time after the window has been created. <i>freeglut</i> follows
+the following conventions, both under Windows and under UNIX/X11:
+</p>
+
+<ul>
+<li><b>Window positioning (setting):</b> When you create a window with
+position (x,y) and size (w,h), or call <tt>glutPositionWindow</tt>,
+<i>freeglut</i> <u>requests</u> that the upper left corner of the
+window frame (non-client area, including decorations) be placed at (x,y),
+and that the drawable (client) area have size (w,h). The coordinates taken
+by <tt>glutInitPosition</tt> and <tt>glutPositionWindow</tt>, as well as
+the coordinates provided by <i>freeglut</i> when it calls the
+<tt>glutPositionFunc</tt> callback, specify the intended top-left of the
+non-client area (window frame).<br><br>
+However, on X11/UNIX systems, the window manager may:
+<ul>
+    <li>Position the client area (drawable area) at the requested coordinates, offsetting the frame accordingly</li>
+    <li>Position the window frame (including decorations) at the requested coordinates</li>
+    <li>Ignore the request entirely (e.g., tiling window managers)</li>
+    <li>Apply its own positioning policies</li>
+    <li>Spawn xeyes and look intently at the user</li>
+</ul>
+<br>
+By default only positive-signed coordinates are supported. If
+GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled, then negative coordinates
+are supported. An exception for <tt>glutPositionWindow</tt> exists as it
+always supports negative window coordinates.
+</li>
+<br>
+<li><b>Window positioning (querying):</b> When you query the position of
+the window using <tt>glutGet</tt> with <tt>GLUT_WINDOW_X</tt> or
+<tt>GLUT_WINDOW_Y</tt>, <i>freeglut</i> returns the coordinates of the
+upper left corner of the drawable (client) area, <u>NOT</u> the window
+frame position that was specified in the positioning request. Similarly,
+<tt>glutGet</tt> with <tt>GLUT_WINDOW_WIDTH</tt> or
+<tt>GLUT_WINDOW_HEIGHT</tt> returns the size of the drawable area as
+specified when the window was created.<br><br>
+This mismatch between the frame coordinates used for positioning and the
+client coordinates returned by queries can cause windows to drift when
+repositioned. Applications that need to reposition windows reliably should
+measure the actual offset between requested and reported positions after
+window creation, then compensate for this offset in subsequent positioning
+calls.
+</li>
+</ul>
 
 <h3>3.2.2 User-data callbacks</h3>
 
@@ -487,10 +524,24 @@ but it certainly makes an attempt to.
 The position and size of a window are a matter of some subtlety.  Most
 windows have a usable area surrounded by a border and with a title bar
 on the top.  The border and title bar are commonly called "decorations."
-The position of the window unfortunately varies with the operating system.
-On both Linux and Windows, you specify the coordinates of the upper
-left-hand corner of the window's decorations. Also for both operating
-systems, the size of the window is the size of the usable interior.<br>
+</p>
+
+<p>
+<b>Window Positioning:</b> When setting window position, you specify the
+intended coordinates of the upper left-hand corner of the window's decorations
+(frame). The size parameter specifies the size of the usable interior (client
+area).<br><br>
+However, <b>on X11/UNIX systems</b>, the window manager has final authority
+over window placement and may not honor the requested position exactly. The
+window manager may position the frame at the requested location, adjust it to
+account for decorations, or apply its own positioning policies. See
+<a href="#Conventions">freeglut's conventions</a> for detailed information
+about this window manager discretion.<br><br>
+<b>On Windows</b>, the positioning behavior is more predictable, with the
+window frame being positioned at the requested coordinates.
+</p>
+
+<p>
 With <tt>glutGet</tt> information can be acquired about the current
 window's size, position and decorations. Note however that according to
 <a href="#Conventions">freeglut's conventions</a>, the information
@@ -499,9 +550,9 @@ coordinates used when setting window position. In addition, GLUT only
 accepts positive window coordinates, and ignores all negative window
 coordinates. But if GLUT_ALLOW_NEGATIVE_WINDOW_POSITION is enabled,
 then negative window coordinates can be used. This is useful for
-multi-montitor setups where the second monitor may be in the negative
+multi-monitor setups where the second monitor may be in the negative
 desktop space of the primary monitor, as now the window can be placed
-on the additional monitors. Furthermore, this flag also determines how 
+on the additional monitors. Furthermore, this flag also determines how
 negative coordinates and sizes are interpreted for subwindows.
 </p>
 
@@ -1119,11 +1170,13 @@ repositioned/moved programatically or by the user.
 
 <p><b>Description</b></p>
 
-<p>When <i>freeglut</i> calls this callback, it provides the new
-position on the screen of the top-left of the <u>non-client area</u>,
-that is, the same coordinates used by <tt>glutInitPosition</tt> and
-<tt>glutPositionWindow</tt>. To get the position on the screen of the
-top-left of the client area, use <tt>glutGet(GLUT_WINDOW_X)</tt> and
+<p>When <i>freeglut</i> calls this callback, it attempts to provide the new
+position on the screen of the top-left of the <u>non-client area</u> (window
+frame), that is, the same frame coordinates as specified by
+<tt>glutInitPosition</tt> and <tt>glutPositionWindow</tt>. However, on
+X11/UNIX systems, the actual position reported depends on the window manager's
+interpretation and may vary. To get the position on the screen of the top-left
+of the client area, use <tt>glutGet(GLUT_WINDOW_X)</tt> and
 <tt>glutGet(GLUT_WINDOW_Y)</tt>. See <a href="#Conventions">freeglut's
 conventions</a> for more information.</p>
 
@@ -1727,10 +1780,10 @@ These queries are with respect to the current window:
 </p>
 
 <ul>
-<li>GLUT_WINDOW_X - window X position, see <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_Y - window Y position, see <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_WIDTH - window width, see <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_HEIGHT - window height, see <a href="#Conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_X - X position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#Conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_Y - Y position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#Conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_WIDTH - width of the window's client (drawable) area. See <a href="#Conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_HEIGHT - height of the window's client (drawable) area. See <a href="#Conventions">freeglut's conventions</a></li>
 <li>GLUT_WINDOW_BORDER_WIDTH - window border width</li>
 <li>GLUT_WINDOW_BORDER_HEIGHT - height of non-client area above window,
 including both border and caption (if any)</li>
