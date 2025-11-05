@@ -2356,12 +2356,12 @@ void glutWireSphere (double dRadius, GLint slices, GLint stacks);<br>
 void glutSolidSphere(double dRadius, GLint slices, GLint stacks);</tt> </p>
 
 <p><b>Arguments</b></p>
-<p><tt>dRadius&nbsp;&nbsp;</tt>The desired radius of the sphere </p>
+<p><tt>dRadius</tt>&nbsp;&nbsp;The desired radius of the sphere </p>
 
-<p><tt>slices&nbsp;&nbsp;&nbsp;</tt>The desired number of slices (divisions
+<p><tt>slices</tt>&nbsp;&nbsp;&nbsp;The desired number of slices (divisions
 in the longitudinal direction) in the sphere </p>
 
-<p><tt>stacks&nbsp;&nbsp;&nbsp;</tt>The desired number of stacks (divisions
+<p><tt>stacks</tt>&nbsp;&nbsp;&nbsp;The desired number of stacks (divisions
 in the latitudinal direction) in the sphere.  The number of points in
 this direction, including the north and south poles, is <tt>stacks+1</tt></p>
 
@@ -2394,15 +2394,15 @@ void glutSolidTorus(double dInnerRadius, double dOuterRadius, GLint
 nSides, GLint nRings);</tt> </p>
 
 <p><b>Arguments</b></p>
-<p><tt>dInnerRadius&nbsp;&nbsp;</tt>The radius of the tube.</p>
+<p><tt>dInnerRadius</tt>&nbsp;&nbsp;The radius of the tube.</p>
 
-<p><tt>dOuterRadius&nbsp;&nbsp;</tt>The distance from the center of the
+<p><tt>dOuterRadius</tt>&nbsp;&nbsp;The distance from the center of the
 Torus to the center of the tube.</p>
 
-<p><tt>nSides&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>The desired number of segments in a
+<p><tt>nSides</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The desired number of segments in a
 single outer circle of the torus </p>
 
-<p><tt>nRings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>The desired number of outer circles
+<p><tt>nRings</tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The desired number of outer circles
 around the origin of the torus </p>
 
 <p><b>Description</b></p>
@@ -2432,14 +2432,14 @@ void glutSolidCylinder(double base, double height, GLint slices, GLint
 stacks);</tt> </p>
 
 <p><b>Arguments</b></p>
-<p><tt>radius&nbsp;&nbsp;</tt>The desired radius of the cylinder </p>
+<p><tt>radius</tt>&nbsp;&nbsp;The desired radius of the cylinder </p>
 
-<p><tt>height&nbsp;&nbsp;</tt>The desired height of the cylinder </p>
+<p><tt>height</tt>&nbsp;&nbsp;The desired height of the cylinder </p>
 
-<p><tt>slices&nbsp;&nbsp;</tt>The desired number of slices around
+<p><tt>slices</tt>&nbsp;&nbsp;The desired number of slices around
 the cylinder </p>
 
-<p><tt>stacks&nbsp;&nbsp;</tt>The desired number of segments between
+<p><tt>stacks</tt>&nbsp;&nbsp;The desired number of segments between
 the base and the top of the cylinder (the number of points, including
 the tip, is <tt>stacks + 1</tt>) </p>
 
@@ -2459,14 +2459,14 @@ void glutSolidCone(double base, double height, GLint slices, GLint
 stacks);</tt> </p>
 
 <p><b>Arguments</b></p>
-<p><tt>base&nbsp;&nbsp;&nbsp;&nbsp;</tt>The desired radius of the base of the cone </p>
+<p><tt>base</tt>&nbsp;&nbsp;&nbsp;&nbsp;The desired radius of the base of the cone </p>
 
-<p><tt>height&nbsp;&nbsp;</tt>The desired height of the cone </p>
+<p><tt>height</tt>&nbsp;&nbsp;The desired height of the cone </p>
 
-<p><tt>slices&nbsp;&nbsp;</tt>The desired number of slices around
+<p><tt>slices</tt>&nbsp;&nbsp;The desired number of slices around
 the base of the cone </p>
 
-<p><tt>stacks&nbsp;&nbsp;</tt>The desired number of segments between
+<p><tt>stacks</tt>&nbsp;&nbsp;The desired number of segments between
 the base and the tip of the cone (the number of points, including the tip,
 is <tt>stacks + 1</tt>) </p>
 
@@ -2495,7 +2495,7 @@ void glutWireCube (double dSize);<br>
 void glutSolidCube(double dSize);</tt> </p>
 
 <p><b>Arguments</b></p>
-<p><tt>dSize&nbsp;&nbsp;</tt>The desired length of an edge of the cube</p>
+<p><tt>dSize</tt>&nbsp;&nbsp;The desired length of an edge of the cube</p>
 
 <p><b>Description</b></p>
 
@@ -2667,7 +2667,7 @@ void glutWireTeaspoon&nbsp;(double dSize);<br>
 void glutSolidTeaspoon(double dSize);</tt></p>
 
 <p><b>Arguments</b></p>
-<p><tt>dSize&nbsp;&nbsp;</tt>The desired size of the teapot, teacup and
+<p><tt>dSize</tt>&nbsp;&nbsp;The desired size of the teapot, teacup and
 teaspoon - relative to a "standard" size</p>
 
 <p><b>Description</b></p>
@@ -2718,7 +2718,7 @@ void glutSetVertexAttribNormal&nbsp;&nbsp;&nbsp;(GLint attrib);<br>
 void glutSetVertexAttribTexCoord2(GLint attrib);</tt></p>
 
 <p><b>Arguments</b></p>
-<p><tt>attrib&nbsp;&nbsp;</tt>The index (address) of the vertex
+<p><tt>attrib</tt>&nbsp;&nbsp;The index (address) of the vertex
 attribute</p>
 
 <p><b>Changes From GLUT</b></p>
@@ -2910,11 +2910,11 @@ void glutSetKeyRepeat&nbsp;&nbsp;&nbsp;(int repeatMode);<br>
 void glutIgnoreKeyRepeat(int ignore);</tt></p>
 
 <p><b>Arguments</b></p>
-<p><tt>glutSetKeyRepeat's repeatMode&nbsp;&nbsp;</tt> 
+<p><tt>glutSetKeyRepeat's repeatMode</tt>&nbsp;&nbsp; 
 GLUT_KEY_REPEAT_OFF to globally switch key repeat off, or
 GLUT_KEY_REPEAT_ON and GLUT_KEY_REPEAT_DEFAULT to globally switch key
 repeat on.<br>
-<tt>glutIgnoreKeyRepeat's ignore&nbsp;&nbsp;&nbsp;</tt> if non-zero, key
+<tt>glutIgnoreKeyRepeat's ignore</tt>&nbsp;&nbsp;&nbsp; if non-zero, key
 repeat is switched off for the current window.</p>
 
 <p><b>Notes</b></p>
