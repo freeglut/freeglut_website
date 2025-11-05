@@ -1505,8 +1505,7 @@ The <tt>glutSpaceballButtonFunc</tt> function sets the window's Spaceball button
 
 <p><b>Usage</b></p>
 
-<p><tt>void glutSpaceballButtonFunc ( void
-(* callback)( int button, int updown )</tt><tt> );</tt></p>
+<p><tt>void glutSpaceballButtonFunc ( void (* callback)( int button, int updown ) );</tt></p>
 
 <p>Has user-data callback function.</p>
 
@@ -1572,8 +1571,7 @@ The <tt>glutDialsFunc</tt> function sets the global dials&buttons box callback. 
 
 <p><b>Usage</b></p>
 
-<p><tt>void glutDialsFunc ( void (* callback)(
-int dial, int value )</tt><tt> );</tt></p>
+<p><tt>void glutDialsFunc ( void (* callback)( int dial, int value ) );</tt></p>
 
 <p>Has user-data callback function.</p>
 
@@ -1625,8 +1623,7 @@ that a call to the function will not produce an error..
 
 <p><b>Usage</b></p>
 
-<p><tt>void glutTabletButtonFunc ( void
-(* callback)( int button, int updown, int x, int y )</tt><tt> );</tt></p>
+<p><tt>void glutTabletButtonFunc ( void (* callback)( int button, int updown, int x, int y ) );</tt></p>
 
 <p>Has user-data callback function.</p>
 
@@ -2690,7 +2687,8 @@ and teaspoon are rendered with their front facing polygon vertices
 winding clockwise. For OpenGL's default back face culling to work, you
 should use:</p>
 
-<p><tt>&nbsp;&nbsp;glFrontFace(GL_CW);<br>
+<p><tt>
+&nbsp;&nbsp;glFrontFace(GL_CW);<br>
 &nbsp;&nbsp;glutSolidTeapot(size);<br>
 &nbsp;&nbsp;glFrontFace(GL_CCW);</tt></p>
 
