@@ -244,11 +244,11 @@ contained herein.
 	</li>
 	<li><a href="#UsageNotes">Usage Notes</a>
 		<ol>
-			<li><a href="#ImplementationNotes">Implementation Notes</a></li>
-			<li><a href="#GLUT_State">GLUT State</a></li>
-			<li><a href="#freeglut.h_Header">"freeglut.h" Header File</a></li>
-			<li><a href="#References">References</a></li>
-			<li><a href="#Index">Index</a></li>
+			<li><a href="#211-implementation-notes">Implementation Notes</a></li>
+			<li><a href="#212-glut-state">GLUT State</a></li>
+			<li><a href="#213-freegluth-header-file">"freeglut.h" Header File</a></li>
+			<li><a href="#214-references">References</a></li>
+			<li><a href="#215-index">Index</a></li>
 		</ol>
 	</li>
 </ol>
@@ -287,7 +287,7 @@ specifies the application program interface to the <i>freeglut</i> library.
 
 <h2>3.1 Design Philosophy</h2>
 
-<h2>3.2 <a name="Conventions"></a>Conventions</h2>
+<h2>3.2 <a name="32-conventions"></a>Conventions</h2>
 
 <p>
 In developing the <i>freeglut</i> library, we have taken careful steps
@@ -535,7 +535,7 @@ However, <b>on X11/UNIX systems</b>, the window manager has final authority
 over window placement and may not honor the requested position exactly. The
 window manager may position the frame at the requested location, adjust it to
 account for decorations, or apply its own positioning policies. See
-<a href="#Conventions">freeglut's conventions</a> for detailed information
+<a href="#32-conventions">freeglut's conventions</a> for detailed information
 about this window manager discretion.<br><br>
 <b>On Windows</b>, the positioning behavior is more predictable, with the
 window frame being positioned at the requested coordinates.
@@ -544,7 +544,7 @@ window frame being positioned at the requested coordinates.
 <p>
 With <tt>glutGet</tt> information can be acquired about the current
 window's size, position and decorations. Note however that according to
-<a href="#Conventions">freeglut's conventions</a>, the information
+<a href="#32-conventions">freeglut's conventions</a>, the information
 returned about the window coordinates does not correspond to the
 coordinates used when setting window position. In addition, GLUT only
 accepts positive window coordinates, and ignores all negative window
@@ -1177,7 +1177,7 @@ frame), that is, the same frame coordinates as specified by
 X11/UNIX systems, the actual position reported depends on the window manager's
 interpretation and may vary. To get the position on the screen of the top-left
 of the client area, use <tt>glutGet(GLUT_WINDOW_X)</tt> and
-<tt>glutGet(GLUT_WINDOW_Y)</tt>. See <a href="#Conventions">freeglut's
+<tt>glutGet(GLUT_WINDOW_Y)</tt>. See <a href="#32-conventions">freeglut's
 conventions</a> for more information.</p>
 
 <p><b>Changes From GLUT</b></p>
@@ -1777,10 +1777,10 @@ These queries are with respect to the current window:
 </p>
 
 <ul>
-<li>GLUT_WINDOW_X - X position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_Y - Y position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_WIDTH - width of the window's client (drawable) area. See <a href="#Conventions">freeglut's conventions</a></li>
-<li>GLUT_WINDOW_HEIGHT - height of the window's client (drawable) area. See <a href="#Conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_X - X position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#32-conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_Y - Y position of the window's client (drawable) area, relative to screen origin. Note that this returns the client area position, not the window frame position used by <tt>glutPositionWindow</tt>. See <a href="#32-conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_WIDTH - width of the window's client (drawable) area. See <a href="#32-conventions">freeglut's conventions</a></li>
+<li>GLUT_WINDOW_HEIGHT - height of the window's client (drawable) area. See <a href="#32-conventions">freeglut's conventions</a></li>
 <li>GLUT_WINDOW_BORDER_WIDTH - window border width</li>
 <li>GLUT_WINDOW_BORDER_HEIGHT - height of non-client area above window,
 including both border and caption (if any)</li>
@@ -2961,11 +2961,11 @@ icon.ico is the filename of your icon. The One demo includes such an
 icon as an example.
 </p>
 
-<h2>21.1 <a name="ImplementationNotes"></a>Implementation Notes</h2>
+<h2>21.1 <a name="211-implementation-notes"></a>Implementation Notes</h2>
 
-<h2>21.2 <a name="GLUT_State"></a>GLUT State</h2>
+<h2>21.2 <a name="212-glut-state"></a>GLUT State</h2>
 
-<h2>21.3 <a name="freeglut.h_Header"></a>"freeglut.h" Header File</h2>
+<h2>21.3 <a name="213-freegluth-header-file"></a>"freeglut.h" Header File</h2>
 
 <p>
 Application programmers who are porting their GLUT programs to <i>freeglut</i> may continue
@@ -3007,8 +3007,8 @@ if (glutGet(GLUT_VERSION) &lt; 20001) {
 }
 </pre>
 
-<h2>21.4 <a name="References"></a>References</h2>
+<h2>21.4 <a name="214-references"></a>References</h2>
 
-<h2>21.5 <a name="Index"></a>Index</h2>
+<h2>21.5 <a name="215-index"></a>Index</h2>
 
 <?php generateFooter(); ?>
