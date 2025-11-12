@@ -80,6 +80,7 @@ contained herein.
 		<li>glutPostRedisplay</li>
 		<li>glutPostWindowRedisplay</li>
 		<li>glutSwapBuffers</li>
+		<li>glutSwapInterval</li>
 	</ol>
 		<li><a href="#MouseCursor">Mouse Cursor Functions</a>	<ol>
 		<li>glutSetCursor</li>
@@ -170,9 +171,7 @@ contained herein.
 		<li>glutWireDodecahedron, glutSolidDodecahedron</li>
 		<li>glutWireIcosahedron, glutSolidIcosahedron</li>
 		<li>glutWireRhombicDodecahedron, glutSolidRhombicDodecahedron</li>
-</li>
-	</ol>
-	<ol>
+		<li>glutWireTeapot, glutSolidTeapot, glutWireTeacup,</li>
 		<li>glutSetVertexAttribCoord3, glutSetVertexAttribNormal, glutSetVertexAttribTexCoord2</li>
 	</ol>
 		<li><a href="#GameMode">Game Mode Functions</a>	<ol>
@@ -182,9 +181,7 @@ contained herein.
 	</ol>
 		<li><a href="#VideoResize">Video Resize Functions</a>	<ol>
 		<li>glutVideoResizeGet</li>
-</li>
-	</ol>
-	<ol>
+		<li>glutSetupVideoResizing,</li>
 		<li>glutVideoResize</li>
 		<li>glutVideoPan</li>
 	</ol>
@@ -860,6 +857,53 @@ GLUT does not include the <tt>glutLeaveFullScreen</tt> and
 <h2>7.2 <a name="72-glutpostwindowredisplay"></a>glutPostWindowRedisplay</h2>
 
 <h2>7.3 <a name="73-glutswapbuffers"></a>glutSwapBuffers</h2>
+
+<h2>7.4 <a name="74-glutswapinterval"></a>glutSwapInterval</h2>
+
+<p>
+<tt>glutSwapInterval</tt> allows the application to control the synchronization of
+buffer swaps with display frames (v-sync).</p>
+
+<p>
+<b>Usage</b></p>
+
+<p>
+<tt>void glutSwapInterval(int interval);</tt></p>
+
+<p>
+<b>Description</b></p>
+
+<p>
+An <tt>interval</tt> of 0 requests no synchronization, buffers should be swapped
+immediately, even if the display device is in the middle of scanning out the
+previous frame. This may result in visible artifacts (tearing).</p>
+
+<p>
+An <tt>interval</tt> of 1 is the standard v-sync setting. The swap is performed during
+the next vertical blanking period, after the current frame is done being scanned
+out to the display. Any other positive <tt>interval</tt> greater than 1, will wait for
+that many v-blank periods before swapping.</p>
+
+<p>
+Negative <tt>interval</tt> values are for "adaptive v-sync". If drawing is completed
+and the swap is ready to be executed before the target v-blank, the swap will be
+performed at the target v-blank, exactly as if the <tt>interval</tt> was positive. If
+the target interval has elapsed and the swap is running late, instead of
+waiting more, the swap will be performed immediately, unsynchronzied with the
+display.</p>
+
+<p>
+Not all GL implementations support all of these semantics. Freeglut will attempt
+to fall-back to the nearest-equivalent supported swap interval. If adaptive
+v-sync is not supported, negative values will be flipped to their positive
+equivalent. If running unsynchronized is not possible, an interval of 1 will be
+used instead.</p>
+
+<p>
+<b>Changes From GLUT</b></p>
+
+<p>
+GLUT does not include this function.</p>
 
 <h1>8. <a name="MouseCursor"></a>Mouse Cursor Functions</h1>
 
@@ -1663,8 +1707,9 @@ or rotatable buttons, sending the events to the computer via serial
 I/O.</p>
 
 <p>
-See <a href="http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg">http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg</a>
-[1]
+See <a href="http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg">http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg</a></p>
+
+<p>
 for instance.</p>
 
 <h2>12.19 <a name="1219-glutdialsfunc"></a>glutDialsFunc</h2>
@@ -1690,8 +1735,9 @@ or rotatable buttons, sending the events to the computer via serial
 I/O.</p>
 
 <p>
-See <a href="http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg">http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg</a>
-[1]
+See <a href="http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg">http://www.reputable.com/sgipix/sgi-dialnbutton1.jpg</a></p>
+
+<p>
 for instance.</p>
 
 <h2>12.20 <a name="1220-gluttabletmotionfunc"></a>glutTabletMotionFunc</h2>
@@ -2547,7 +2593,8 @@ draw a wireframe and solid sphere respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireSphere&nbsp;(double&nbsp;dRadius,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
+<p><tt>
+void&nbsp;glutWireSphere&nbsp;(double&nbsp;dRadius,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 void&nbsp;glutSolidSphere(double&nbsp;dRadius,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 </tt></p>
 
@@ -2591,7 +2638,8 @@ a wireframe and solid torus (donut shape) respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireTorus&nbsp;(double&nbsp;dInnerRadius,&nbsp;double&nbsp;dOuterRadius,&nbsp;GLint&nbsp;nSides,&nbsp;GLint&nbsp;nRings);<br>
+<p><tt>
+void&nbsp;glutWireTorus&nbsp;(double&nbsp;dInnerRadius,&nbsp;double&nbsp;dOuterRadius,&nbsp;GLint&nbsp;nSides,&nbsp;GLint&nbsp;nRings);<br>
 void&nbsp;glutSolidTorus(double&nbsp;dInnerRadius,&nbsp;double&nbsp;dOuterRadius,&nbsp;GLint&nbsp;nSides,&nbsp;GLint&nbsp;nRings);<br>
 </tt></p>
 
@@ -2637,7 +2685,8 @@ a wireframe and solid cone respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireCylinder&nbsp;(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
+<p><tt>
+void&nbsp;glutWireCylinder&nbsp;(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 void&nbsp;glutSolidCylinder(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 </tt></p>
 
@@ -2668,7 +2717,8 @@ a wireframe and solid cone respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireCone&nbsp;(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
+<p><tt>
+void&nbsp;glutWireCone&nbsp;(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 void&nbsp;glutSolidCone(double&nbsp;base,&nbsp;double&nbsp;height,&nbsp;GLint&nbsp;slices,&nbsp;GLint&nbsp;stacks);<br>
 </tt></p>
 
@@ -2714,7 +2764,8 @@ wireframe and solid cube respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireCube&nbsp;(double&nbsp;dSize);<br>
+<p><tt>
+void&nbsp;glutWireCube&nbsp;(double&nbsp;dSize);<br>
 void&nbsp;glutSolidCube(double&nbsp;dSize);<br>
 </tt></p>
 
@@ -2748,7 +2799,8 @@ respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireTetrahedron&nbsp;(void);<br>
+<p><tt>
+void&nbsp;glutWireTetrahedron&nbsp;(void);<br>
 void&nbsp;glutSolidTetrahedron(void);<br>
 </tt></p>
 
@@ -2777,7 +2829,8 @@ draw a wireframe and solid octahedron (eight-sided Platonic solid) respectively.
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireOctahedron&nbsp;(void);<br>
+<p><tt>
+void&nbsp;glutWireOctahedron&nbsp;(void);<br>
 void&nbsp;glutSolidOctahedron(void);<br>
 </tt></p>
 
@@ -2807,7 +2860,8 @@ solid) respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireDodecahedron&nbsp;(void);<br>
+<p><tt>
+void&nbsp;glutWireDodecahedron&nbsp;(void);<br>
 void&nbsp;glutSolidDodecahedron(void);<br>
 </tt></p>
 
@@ -2837,7 +2891,8 @@ respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireIcosahedron&nbsp;(void);<br>
+<p><tt>
+void&nbsp;glutWireIcosahedron&nbsp;(void);<br>
 void&nbsp;glutSolidIcosahedron(void);<br>
 </tt></p>
 
@@ -2867,7 +2922,8 @@ semi-regular solid) respectively.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireRhombicDodecahedron&nbsp;(void);<br>
+<p><tt>
+void&nbsp;glutWireRhombicDodecahedron&nbsp;(void);<br>
 void&nbsp;glutSolidRhombicDodecahedron(void);<br>
 </tt></p>
 
@@ -2905,7 +2961,8 @@ wireframe and solid teaspoon.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutWireTeapot&nbsp;&nbsp;&nbsp;(double&nbsp;dSize);<br>
+<p><tt>
+void&nbsp;glutWireTeapot&nbsp;&nbsp;&nbsp;(double&nbsp;dSize);<br>
 void&nbsp;glutSolidTeapot&nbsp;&nbsp;(double&nbsp;dSize);<br>
 void&nbsp;glutWireTeacup&nbsp;&nbsp;&nbsp;(double&nbsp;dSize);<br>
 void&nbsp;glutSolidTeacup&nbsp;&nbsp;(double&nbsp;dSize);<br>
@@ -2941,7 +2998,8 @@ and teaspoon are rendered with their front facing polygon vertices
 winding clockwise. For OpenGL's default back face culling to work, you
 should use:</p>
 
-<p><tt>&nbsp;&nbsp;glFrontFace(GL_CW);<br>
+<p><tt>
+&nbsp;&nbsp;glFrontFace(GL_CW);<br>
 &nbsp;&nbsp;glutSolidTeapot(size);<br>
 &nbsp;&nbsp;glFrontFace(GL_CCW);<br>
 </tt></p>
@@ -2970,7 +3028,8 @@ generated for the teapot, teacup and teaspoon.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutSetVertexAttribCoord3&nbsp;&nbsp;&nbsp;(GLint&nbsp;attrib);<br>
+<p><tt>
+void&nbsp;glutSetVertexAttribCoord3&nbsp;&nbsp;&nbsp;(GLint&nbsp;attrib);<br>
 void&nbsp;glutSetVertexAttribNormal&nbsp;&nbsp;&nbsp;(GLint&nbsp;attrib);<br>
 void&nbsp;glutSetVertexAttribTexCoord2(GLint&nbsp;attrib);<br>
 </tt></p>
@@ -3183,7 +3242,8 @@ per-window basis.</p>
 <p>
 <b>Definition</b></p>
 
-<p><tt>void&nbsp;glutSetKeyRepeat&nbsp;&nbsp;&nbsp;(int&nbsp;repeatMode);<br>
+<p><tt>
+void&nbsp;glutSetKeyRepeat&nbsp;&nbsp;&nbsp;(int&nbsp;repeatMode);<br>
 void&nbsp;glutIgnoreKeyRepeat(int&nbsp;ignore);<br>
 </tt></p>
 
@@ -3262,12 +3322,8 @@ to include <tt>&lt;GL/glut.h&gt;</tt> in their programs.
 Programs which use the <i>freeglut</i>-specific extensions to GLUT should include
 <tt>&lt;GL/freeglut.h&gt;</tt>.  One possible arrangement is as follows:</p>
 
-<p><tt><br>
-#ifdef&nbsp;FREEGLUT<br>
-#include&nbsp;&lt;GL/freeglut.h&gt;<br>
-#else<br>
-#include&nbsp;&lt;GL/glut.h&gt;<br>
-#endif<br>
+<p><tt>
+#ifdef&nbsp;FREEGLUT&nbsp;#include&nbsp;&lt;GL/freeglut.h&gt;&nbsp;#else&nbsp;#include&nbsp;&lt;GL/glut.h&gt;&nbsp;#endif&nbsp;<br>
 </tt></p>
 
 <p>
@@ -3286,11 +3342,10 @@ minor version and Z is the patch level.</p>
 <p>
 This may be used as follows:</p>
 
-<p><tt><br>
-if&nbsp;(glutGet(GLUT_VERSION)&nbsp;&lt;&nbsp;20001)&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;printf("Sorry,&nbsp;you&nbsp;need&nbsp;freeglut&nbsp;version&nbsp;2.0.1&nbsp;or&nbsp;later&nbsp;to&nbsp;run&nbsp;this&nbsp;program.\n");<br>
+<p><tt>
+if&nbsp;(glutGet(GLUT_VERSION)&nbsp;&lt;&nbsp;20001)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Sorry,&nbsp;you&nbsp;need&nbsp;freeglut&nbsp;version&nbsp;2.0.1&nbsp;or&nbsp;later&nbsp;to&nbsp;run&nbsp;this&nbsp;program.\n");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;exit(1);<br>
-}<br>
+}&nbsp;<br>
 </tt></p>
 
 <h2>21.4 <a name="214-references"></a>References</h2>
