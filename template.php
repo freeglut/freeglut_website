@@ -10,7 +10,6 @@ $title = $site_title . " :: The Next Generation of GLUT";
 $sidebarentries = array(0, # We skip this entry anyway...
 	array("name"=>"About",        "page"=>"/index.php"), 
 	array("name"=>"News",         "page"=>"/news.php"), 
-	array("name"=>"Progress",     "page"=>"/progress.php"),
 	array("name"=>"Help Out",     "page"=>"/help.php"),
 	1,
 	array("name"=>"Download",     "page"=>"/index.php#download"),

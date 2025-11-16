@@ -18,8 +18,7 @@ better than that. It's a GLUT replacement. Here are the features you
 have wanted -- and if you have ideas for more, share them (see below),
 or fork our <a href="https://github.com/freeglut/freeglut">github
 repository</a> and implement them! freeglut is under continuous
-development. See <a href=progress.php>here</a> for the list of work that is
-still to be done.</p> 
+development.
 
 <div class="textheader">Everyone can help</div>
 <p>
@@ -29,7 +28,6 @@ Contributions can be nearly anything.  The point is involvement!</p>
 
 <p>Examples:
 <ul>
-	<li>Attack one of the <a href="progress.php">points on our todo list</a></li>
 	<li>Use freeglut in your projects!</li>
 	<li>Tell us what you like.</li>
 	<li>Tell us what you'd change.</li>
@@ -45,14 +43,6 @@ Contributions can be nearly anything.  The point is involvement!</p>
 <p>
 But simply, become involved!
 The project is not just software, it's the people that contribute, too.
-</p>
-
-<div class="textheader">future freeglut</div>
-<p>
-<a href=progress.php>Click here</a> for an overview of the major work,
-its status and planned milestones for future versions of freeglut. Help on
-any of these plans, as well as suggestions and/or patches for anything
-else are very welcome!
 </p>
 
 <div class="textheader"><a name="svn"></a>Getting the latest source code</div>

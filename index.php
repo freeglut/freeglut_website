@@ -61,12 +61,10 @@ platforms, being just some of them.</p>
 
 <div class="textheader"><a name="download"></a>Help out!</div>
 
-<p>We are looking for developers to help out with further work on the Android
-and BlackBerry 10 ports. Furthermore, ports to Cocoa on OSX, and maybe even
-Wayland are planned, along with some enhancements to the API and implementation.</p>
+<p>We are looking for developers to fix bugs, port to new platforms, improve
+compatibility, or in general improve freeglut in every conceivable way</p>
 
-<p>See <a href="progress.php">here</a> for an overview of the major points
-on our todo list. For more information about helping out, see the
+<p>For more information about helping out, see the
 <a href="help.php">Help Out page</a> and
 <a href="http://lists.sourceforge.net/lists/listinfo/freeglut-developer">join</a>
 the <a href="mailto:freeglut-developer@lists.sourceforge.net">freeglut-developer</a>
@@ -91,6 +89,11 @@ on potential design issues for large contributions are best suited to the mailin
 	</p>
 
 	<ul>
+		<li>
+			<a href="https://github.com/freeglut/freeglut/releases/download/v3.8.0/freeglut-3.8.0.tar.gz">freeglut 3.8.0</a>
+			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.8.0.tar.gz?download">sourceforge mirror</a>)
+			[<i>Released: 16 November 2025</i>]
+		</li>
 		<li>
 			<a href="https://github.com/freeglut/freeglut/releases/download/v3.6.0/freeglut-3.6.0.tar.gz">freeglut 3.6.0</a>
 			(<a href="http://prdownloads.sourceforge.net/freeglut/freeglut-3.6.0.tar.gz?download">sourceforge mirror</a>)
