@@ -62,7 +62,7 @@ platforms, being just some of them.</p>
 <div class="textheader"><a name="download"></a>Help out!</div>
 
 <p>We are looking for developers to fix bugs, port to new platforms, improve
-compatibility, or in general improve freeglut in every conceivable way</p>
+compatibility, or in general improve freeglut in every conceivable way.</p>
 
 <p>For more information about helping out, see the
 <a href="help.php">Help Out page</a> and
